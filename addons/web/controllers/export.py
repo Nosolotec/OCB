@@ -520,7 +520,7 @@ class ExportFormat(object):
 class CSVExport(ExportFormat, http.Controller):
 
     @http.route('/web/export/csv', type='http', auth="user")
-    def web_export_csv(self, data):
+    def web_export_csv(self, data, token=None):
         try:
             return self.base(data)
         except Exception as exc:
@@ -564,7 +564,7 @@ class CSVExport(ExportFormat, http.Controller):
 class ExcelExport(ExportFormat, http.Controller):
 
     @http.route('/web/export/xlsx', type='http', auth="user")
-    def web_export_xlsx(self, data):
+    def web_export_xlsx(self, data, token=None):
         try:
             return self.base(data)
         except Exception as exc:
